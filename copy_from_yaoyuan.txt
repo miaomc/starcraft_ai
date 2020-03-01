@@ -8,9 +8,11 @@
 需要用到的软件有：
 星际争霸（废话）
 sceditIII
-下载地址：http://www.starcraft.org/customs/resources/SCAIEdit31.zip
+下载地址：SCAIEdit31.zip
+http://www.staredit.net/sc1db/download/3560/
 MPQ2K
-下载地址：http://www.sjzhengtong.com/images/_notes/game/mpq2k.zip
+下载地址：mpq2k.zip
+http://02.bd-pcgame.720582.com:8090//tools/gongju/sc10241.zip
 
 
 修改之前，请注意备份patch_rt.mpq文件

@@ -742,7 +742,7 @@ multirun block9
 train 5 valkyrie
 multirun block8
 train 2 wraith
-place_guard science_vessel 0
+place_guard sciencsse_vessel 0
 place_guard science_vessel 2
 expand 2 block26
 build 3 starport 80
