@@ -20,7 +20,7 @@ define_max 255 goliath
 define_max 255 wraith
 define_max 255 dropship
 define_max 50 battlecruiser
-define_max 3 science_vessel
+define_max 1 science_vessel
 define_max 255 valkyrie
 define_max 255 ghost
 define_max 255 nuclear_missile
@@ -73,21 +73,20 @@ wait_buildstart 23 scv
 train 7 marine
 build 2 barracks 80
 wait_buildstart 2 barracks
-capt_expand
 build 24 scv 80
 wait_buildstart 24 scv
-train 8 marine
+train 9 marine
 build 25 scv 80
 wait_buildstart 25 scv
-train 9 marine
+train 11 marine
 wait_build 1 engineering_bay
 upgrade 1 t_infantry_weapon 80
 build 1 academy 80
 wait_buildstart 1 academy
-train 10 marine
+train 12 marine
 build 26 scv 80
 wait_buildstart 26 scv
-train 12 marine
+train 13 marine
 build 27 scv 80
 wait_buildstart 27 scv
 train 14 marine
@@ -95,6 +94,7 @@ build 4 barracks 80
 wait_buildstart 4 barracks
 build 4 supply_depot 80
 wait_buildstart 4 supply_depot
+capt_expand
 build 2 command_center 80
 wait_buildstart 2 command_center
 train 16 marine
@@ -114,6 +114,7 @@ train 24 marine
 build 30 scv 80
 wait_buildstart 30 scv
 multirun blockacd
+multirun blockexp
 build 1 factory 80
 wait_buildstart 1 factory
 train 4 medic
@@ -123,13 +124,13 @@ defensebuild_ag 1 marine
 defenseuse_ag 1 marine
 define_max 40 marine
 define_max 4 medic
+build 2 comsat_station 80
 wait_build 1 factory
 build 1 machine_shop 80
 wait_build 1 machine_shop
 tech siege_mode 80
 defensebuild_gg 1 siege_tank
 defenseuse_gg 1 siege_tank
-multirun blockexp
 goto block3
 
 :block3
@@ -177,6 +178,7 @@ build 2 engineering_bay 80
 multirun blockeng2
 define_max 50 marine
 define_max 5 medic
+define_max 2 science_vessel
 multirun blockeng1
 goto block72
 
