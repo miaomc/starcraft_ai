@@ -83,6 +83,7 @@ wait_build 1 engineering_bay
 upgrade 1 t_infantry_weapon 80
 build 1 academy 80
 wait_buildstart 1 academy
+capt_expand
 train 12 marine
 build 26 scv 80
 wait_buildstart 26 scv
@@ -94,7 +95,6 @@ build 4 barracks 80
 wait_buildstart 4 barracks
 build 4 supply_depot 80
 wait_buildstart 4 supply_depot
-capt_expand
 build 2 command_center 80
 wait_buildstart 2 command_center
 train 16 marine
@@ -150,6 +150,10 @@ goto block4
 
 :block4
 train 2 battlecruiser
+build 3 starport 80
+wait_buildstart 3 starport
+build 30 scv 80
+wait_buildstart 30 scv
 build 4 starport 80
 wait_buildstart 4 starport
 build 5 starport 80
