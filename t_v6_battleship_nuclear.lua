@@ -2,7 +2,7 @@
 ;
 ; Script name : Terran Expansion Custom Level
 ; Starcraft Version 1.08b
-; T: marine and then battlecruiser v1.04
+; T: marine_battlecruiser_nuclear v1.04
 
 script_name Terran Expansion Custom Level
 script_id TMCx
@@ -111,6 +111,7 @@ define_max 24 marine
 define_max 4 medic
 train 4 medic
 train 24 marine
+place_guard medic 0
 build 30 scv 80
 wait_buildstart 30 scv
 multirun blockacd
@@ -124,7 +125,6 @@ defensebuild_ag 1 marine
 defenseuse_ag 1 marine
 define_max 40 marine
 define_max 4 medic
-build 2 comsat_station 80
 wait_build 1 factory
 build 1 machine_shop 80
 wait_build 1 machine_shop
@@ -183,7 +183,11 @@ multirun blockeng2
 define_max 50 marine
 define_max 5 medic
 define_max 2 science_vessel
+define_max 4 siege_tank
 multirun blockeng1
+multirun block73
+define_max 1 nuclear_missile
+define_max 6 ghost
 goto block72
 
 :block72
@@ -193,6 +197,8 @@ train 4 marine
 train 6 battlecruiser
 train 4 medic
 train 12 marine
+train 2 siege_tank
+train 2 ghost
 train 8 battlecruiser
 train 16 marine
 train 10 battlecruiser
@@ -206,6 +212,27 @@ attack_add 12 battlecruiser
 attack_prepare
 wait 3600
 goto block72
+
+:block73
+build 6 starport 80
+wait_build 6 starport
+build 6 control_tower 80
+
+build 2 science_facility 80
+wait_build 2 science_facility
+build 1 covert_ops 80
+wait_buildstart 1 covert_ops
+defensebuild_gg 1 ghost
+defenseuse_gg 1 ghost
+defensebuild_ag 1 ghost
+defenseuse_ag 1 ghost
+place_guard ghost 0
+place_guard ghost 1
+place_guard ghost 2
+train 4 ghost
+build 1 nuclear_silo 80
+wait_build 1 nuclear_silo
+goto block88
 
 :blockexp
 expand 1 block71
@@ -304,21 +331,6 @@ wait_train 1 science_vessel
 tech emp_shockwave 30
 wait 4500
 stop
-
-define_max 1 nuclear_missile
-build 1 covert_ops 80
-wait_buildstart 1 covert_ops
-defensebuild_gg 1 ghost
-defenseuse_gg 1 ghost
-defensebuild_ag 1 ghost
-defenseuse_ag 1 ghost
-place_guard ghost 0
-place_guard ghost 1
-place_guard ghost 2
-train 4 ghost
-build 1 nuclear_silo 80
-wait_build 1 nuclear_silo
-
 
 :block88
 wait_train 1 ghost

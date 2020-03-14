@@ -2,7 +2,7 @@
 ;
 ; Script name : Terran Expansion Custom Level
 ; Starcraft Version 1.08b
-; T: marine and then battlecruiser v1.04
+; T: marine_battlecruiser_nuclear v1.04
 
 script_name Terran Expansion Custom Level
 script_id TMCx
@@ -36,8 +36,8 @@ build 1 supply_depot 80
 build 11 scv 80
 wait_buildstart 11 scv
 build 1 barracks 80
-build 16 scv 80
-wait_buildstart 16 scv
+build 15 scv 80
+wait_buildstart 15 scv
 build 2 supply_depot 80
 build 17 scv 80
 wait_buildstart 17 scv
@@ -51,55 +51,56 @@ build 3 supply_depot 80
 wait_buildstart 3 supply_depot
 build 19 scv 80
 wait_buildstart 19 scv
+build 1 refinery 80
 train 3 marine
 build 20 scv 80
 wait_buildstart 20 scv
-build 1 refinery 80
 train 4 marine
 build 1 bunker 80
 wait_buildstart 1 bunker
 build 21 scv 80
 wait_buildstart 21 scv
-train 5 marine
+train 6 marine
 build 1 engineering_bay 80
 wait_buildstart 1 engineering_bay
 build 22 scv 80
 wait_buildstart 22 scv
-train 6 marine
+train 7 marine
 build 3 bunker 80
 wait_buildstart 3 bunker
 build 23 scv 80
 wait_buildstart 23 scv
-train 7 marine
+train 9 marine
 build 2 barracks 80
 wait_buildstart 2 barracks
 build 24 scv 80
 wait_buildstart 24 scv
-train 9 marine
+build 4 supply_depot 80
+wait_buildstart 4 supply_depot
+train 10 marine
 build 25 scv 80
 wait_buildstart 25 scv
-train 11 marine
+train 13 marine
 wait_build 1 engineering_bay
 upgrade 1 t_infantry_weapon 80
 build 1 academy 80
 wait_buildstart 1 academy
 capt_expand
-train 12 marine
 build 26 scv 80
 wait_buildstart 26 scv
-train 13 marine
+train 14 marine
 build 27 scv 80
 wait_buildstart 27 scv
-train 14 marine
+train 15 marine
 build 4 barracks 80
 wait_buildstart 4 barracks
-build 4 supply_depot 80
-wait_buildstart 4 supply_depot
 build 2 command_center 80
 wait_buildstart 2 command_center
 train 16 marine
 wait_build 1 academy
 tech stim_packs 70
+place_guard medic 0
+place_guard medic 2
 train 2 medic
 build 1 comsat_station 80
 wait_buildstart 1 comsat_station
@@ -111,6 +112,7 @@ define_max 24 marine
 define_max 4 medic
 train 4 medic
 train 24 marine
+place_guard medic 0
 build 30 scv 80
 wait_buildstart 30 scv
 multirun blockacd
@@ -124,7 +126,6 @@ defensebuild_ag 1 marine
 defenseuse_ag 1 marine
 define_max 40 marine
 define_max 4 medic
-build 2 comsat_station 80
 wait_build 1 factory
 build 1 machine_shop 80
 wait_build 1 machine_shop
@@ -137,6 +138,8 @@ goto block3
 build 2 starport 80
 wait_buildstart 2 starport
 upgrade 1 t_infantry_armor 80
+build 5 barracks 80
+wait_buildstart 5 barracks
 wait_build 1 starport
 build 1 science_facility 80
 wait_buildstart 1 science_facility
@@ -180,10 +183,14 @@ train 6 battlecruiser
 multirun block78
 build 2 engineering_bay 80
 multirun blockeng2
-define_max 50 marine
+define_max 36 marine
 define_max 5 medic
 define_max 2 science_vessel
+define_max 4 siege_tank
 multirun blockeng1
+multirun block73
+define_max 1 nuclear_missile
+define_max 3 ghost
 goto block72
 
 :block72
@@ -193,6 +200,8 @@ train 4 marine
 train 6 battlecruiser
 train 4 medic
 train 12 marine
+train 2 siege_tank
+train 2 ghost
 train 8 battlecruiser
 train 16 marine
 train 10 battlecruiser
@@ -207,13 +216,34 @@ attack_prepare
 wait 3600
 goto block72
 
+:block73
+build 6 starport 80
+wait_build 6 starport
+build 6 control_tower 80
+
+build 2 science_facility 80
+wait_build 2 science_facility
+build 1 covert_ops 80
+wait_buildstart 1 covert_ops
+defensebuild_gg 1 ghost
+defenseuse_gg 1 ghost
+defensebuild_ag 1 ghost
+defenseuse_ag 1 ghost
+place_guard ghost 0
+place_guard ghost 1
+place_guard ghost 2
+train 4 ghost
+build 1 nuclear_silo 80
+wait_build 1 nuclear_silo
+goto block88
+
 :blockexp
 expand 1 block71
-wait 7200
+wait 3600
 expand 2 block71
-wait 7200
+wait 5400
 expand 3 block71
-wait 7200
+wait 3600
 expand 4 block71
 stop
 
@@ -304,21 +334,6 @@ wait_train 1 science_vessel
 tech emp_shockwave 30
 wait 4500
 stop
-
-define_max 1 nuclear_missile
-build 1 covert_ops 80
-wait_buildstart 1 covert_ops
-defensebuild_gg 1 ghost
-defenseuse_gg 1 ghost
-defensebuild_ag 1 ghost
-defenseuse_ag 1 ghost
-place_guard ghost 0
-place_guard ghost 1
-place_guard ghost 2
-train 4 ghost
-build 1 nuclear_silo 80
-wait_build 1 nuclear_silo
-
 
 :block88
 wait_train 1 ghost
