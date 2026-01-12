@@ -10,6 +10,7 @@ script_id TMCx
 start_town
 transports_off
 farms_notiming
+max_workers 60
 goto block1
 
 :block1
