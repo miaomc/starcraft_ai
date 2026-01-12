@@ -1,5 +1,10 @@
+# How it works
+- Just replace the patch_rt.mpq file with the original patch_rt.mpq in starcraft game directory
+- Start the original game,the computer AI will run as the scripts discribed.
 # starcraft_ai
 - For Starcraft V1.08~V1.16, ai robot scripts.
+- In directory "1.08", it's SCAI scripts and with starcraft:broodwar v1.08 mpq file
+- In directory "1.16.1", those scripts is writing with PyMs and with starcraft:broodwar v1.16.1 mpq file
 # Procedure
 - CMD:mpq2k.exe e broodat.mpq scripts\bwscript.bin
 - CMD:mpq2k.exe e patch_rt.mpq scripts\aiscript.bin
